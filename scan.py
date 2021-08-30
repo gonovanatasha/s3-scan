@@ -229,7 +229,7 @@ def lambda_handler(event, context):
     to_download = clamav.update_defs_from_s3(
         s3_client, AV_DEFINITION_S3_BUCKET, AV_DEFINITION_S3_PREFIX
     )
-
+      
     for download in to_download.values():
         s3_path = download["s3_path"]
         local_path = download["local_path"]
