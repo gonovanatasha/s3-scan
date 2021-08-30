@@ -241,7 +241,7 @@ def lambda_handler(event, context):
         "Scan of s3://%s resulted in %s\n"
         % (os.path.join(s3_object.bucket_name, s3_object.key), scan_result)
     )
-     if scan_result == 'INFECTED':
+    if scan_result == 'INFECTED':
         print('Infected Action Start')
         copy_source = {
           'Bucket': s3_object.bucket_name,
