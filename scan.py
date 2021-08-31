@@ -250,7 +250,7 @@ def lambda_handler(event, context):
         print(s3.Bucket(AV_INFECTED_S3_BUCKET))
         #Creating Destination Bucket 
         destbucket = s3.Bucket(AV_INFECTED_S3_BUCKET)
-        destbucket.copy(copy_source)
+        destbucket.copy(copy_source, s3_object.key)
    
         #To Delete the File After Copying It to the Target Directory
         s3.Object(s3_object.bucket_name,s3_object.key).delete()
